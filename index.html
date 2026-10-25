@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Sakuya's Phone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+  <div class="dynamic-island"></div>
+
+  <div class="sys-status" id="sys-status">
+    <span class="clock-time">09:41</span>
+    <div class="status-right">
+      <img src="https://sions-phone.pages.dev/icon-wifi.png" alt="WiFi" class="status-icon">
+      <span class="battery"></span>
+    </div>
+  </div>
+
+  <!-- LOCK SCREEN -->
+  <div id="lock-screen" class="screen active">
+    <div class="torch-overlay" id="torch-overlay"></div>
+    
+    <div class="status-bar">
+      <span class="clock-time">09:41</span>
+      <div class="status-right">
+        <img src="https://sions-phone.pages.dev/icon-wifi.png" alt="WiFi" class="status-icon">
+        <span class="battery"></span>
+      </div>
+    </div>
+
+    <div class="lock-center">
+      <div class="lock-date" id="lock-date">Sat Oct 24</div>
+      <div class="lock-time clock-time">09:41</div>
+    </div>
+
+    <div class="lock-bottom">
+      <!-- player de música (preenchido pelo script no fim do arquivo) -->
+      <div class="lock-music" id="lock-music"></div>
+      <div class="lock-buttons">
+        <div class="lock-btn" id="btn-flashlight" aria-label="Flashlight">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.5 2.8h9v3.3c0 .6-.2 1.1-.6 1.6L15 9H9l-.9-1.3c-.4-.5-.6-1-.6-1.6z"/><path fill-rule="evenodd" d="M9.6 10.2h4.8a1 1 0 0 1 1 1v8.3a2 2 0 0 1-2 2h-2.8a2 2 0 0 1-2-2v-8.3a1 1 0 0 1 1-1zm1.4 2.3v3.2a1 1 0 0 0 2 0v-3.2a1 1 0 0 0-2 0z"/></svg>
+        </div>
+        <div class="lock-hint">Swap up or tap to unlock</div>
+        <div class="lock-btn" id="btn-camera" aria-label="Camera">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9 4.4h6l1.3 1.9H19A2.5 2.5 0 0 1 21.5 8.8v8.6A2.5 2.5 0 0 1 19 19.9H5a2.5 2.5 0 0 1-2.5-2.5V8.8A2.5 2.5 0 0 1 5 6.3h2.7zM12 8.9a3.9 3.9 0 1 0 0 7.8 3.9 3.9 0 0 0 0-7.8z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="home-indicator-container" onclick="showScreen('passcode-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- PASSCODE SCREEN -->
+  <div id="passcode-screen" class="screen">
+    <div class="status-bar">
+      <span class="clock-time">09:41</span>
+      <div class="status-right">
+        <img src="https://sions-phone.pages.dev/icon-wifi.png" alt="WiFi" class="status-icon">
+        <span class="battery"></span>
+      </div>
+    </div>
+
+    <div>
+      <div class="pass-title">Enter PIN</div>
+      <div class="dots" id="dots">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+      <div class="keypad" id="keypad"></div>
+    </div>
+
+    <div class="pass-footer">
+      <button id="btn-emergency">Emergency</button>
+      <button id="btn-cancel">Cancel</button>
+    </div>
+    <div class="home-indicator-container" onclick="snd('lock');showScreen('lock-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- HOME SCREEN -->
+  <div id="home-screen" class="screen">
+    <div class="home-content">
+      <div class="status-bar">
+        <span class="clock-time">09:41</span>
+        <div class="status-right">
+          <img src="https://sions-phone.pages.dev/icon-wifi.png" alt="WiFi" class="status-icon">
+          <span class="battery"></span>
+        </div>
+      </div>
+
+      <div class="app-grid" id="app-grid"></div>
+    </div>
+
+    <div class="dock-container">
+      <div class="dock" id="dock"></div>
+    </div>
+    
+    <div class="home-indicator-container" onclick="snd('lock');showScreen('lock-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- APP SCREEN -->
+  <div id="app-screen" class="screen">
+    <div class="app-header" id="app-header" style="display:none;"></div>
+    <div class="app-body" id="app-body"></div>
+    
+    <div class="home-indicator-container" onclick="showScreen('home-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- NOTE DETAIL SCREEN (iOS Notes Amber Theme) -->
+  <div id="note-detail-screen" class="note-detail-screen">
+    <div class="note-detail-header">
+      <button class="notes-back-btn" onclick="closeNoteDetail()">‹Note</button>
+      <span class="notes-more-btn">•••</span>
+    </div>
+
+    <div class="note-detail-body">
+      <div class="note-detail-date" id="note-detail-date">เมื่อวาน เวลา 19:30 น.</div>
+      <div class="note-detail-title-input" id="note-detail-title">หัวข้อโน้ต</div>
+      <div class="note-detail-content" id="note-detail-content">เนื้อหาโน้ต...</div>
+    </div>
+
+    <div class="home-indicator-container" onclick="showScreen('home-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- CHAT DETAIL SCREEN (iOS Messages) -->
+  <div id="chat-detail-screen" class="chat-detail-screen">
+    <div class="chat-detail-header">
+      <button id="msg-back-btn" class="notes-back-btn" style="font-size:16px;" onclick="closeChatDetail()">‹ ย้อนกลับ</button>
+      <div class="chat-header-user">
+        <!-- 🌟 เปลี่ยนมาใช้ div ครอบ id="chat-header-avatar-box" และย้าย id="chat-header-avatar" ไปไว้ข้างใน -->
+        <div id="chat-header-avatar-box" style="width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+          <img id="chat-header-avatar" src="img/ryo-5.jpg" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span id="chat-header-name" class="chat-header-name">RIKU</span>
+      </div>
+      <div style="width: 50px;"></div>
+    </div>
+
+    <div class="chat-messages-area" id="chat-messages-area"></div>
+
+    <div class="chat-input-bar">
+      <div class="chat-add-btn">+</div>
+      <input type="text" class="chat-input-box" placeholder="iMessage" id="chat-input">
+      <div class="chat-send-btn">↑</div>
+    </div>
+
+    <div class="home-indicator-container" onclick="showScreen('home-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- KAKAOTALK CHAT DETAIL SCREEN -->
+  <div id="kakao-chat-screen" class="kakao-chat-screen">
+    <div class="kakao-chat-header">
+      <button class="kakao-back-btn" onclick="closeKakaoChat()">‹</button>
+      <span id="kakao-header-title">Ryo</span>
+      <div style="font-size: 16px;">🔍 ≡</div>
+    </div>
+
+    <div class="chat-messages-area" id="kakao-messages-area" style="background: transparent;"></div>
+
+    <div class="chat-input-bar">
+      <div class="chat-add-btn">+</div>
+      <input type="text" class="chat-input-box" placeholder="Message..." id="kakao-input">
+      <div class="chat-send-btn" style="background: var(--kakao-yellow); color: var(--kakao-brown);">#</div>
+    </div>
+
+    <div class="home-indicator-container" onclick="showScreen('home-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+  <!-- INSTAGRAM APP SCREEN -->
+<div id="instagram-screen" class="screen" style="display: flex; flex-direction: column; height: 100%; max-height: 100%; position: absolute; inset: 0; background: #ffffff; color: #000; box-sizing: border-box; overflow: hidden; padding-top: 30px;">
+  
+  <div style="padding: 10px 16px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); display: flex; justify-content: space-between; align-items: center; border-bottom: 0.5px solid rgba(0,0,0,0.1); flex-shrink: 0; z-index: 10;">
+    <button onclick="showScreen('home-screen')" style="background:none; border:none; color:var(--ios-blue); font-size:16px; font-weight:500; cursor:pointer;">‹</button>
+    <span style="font-size: 20px; font-weight: 700; font-family: cursive;">Instagram</span>
+    
+    <!-- เปลี่ยนไอคอนรูปคน 👤 ตรงนี้เป็นรูป ig-likes.png -->
+    <div style="width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="openIgProfile('sion')">
+      <img src="ig-likes.png" style="width: 100%; height: 100%; object-fit: contain;">
+    </div>
+  </div>
+
+  <div style="flex: 1; overflow-y: auto;" id="ig-content-area">
+    <!-- เนื้อหาฟีดจะถูกเรนเดอร์ด้วย JS -->
+  </div>
+
+    <!-- แถบนำทางด้านล่างแถบเดียว -->
+    <div style="display: flex; justify-content: space-around; align-items: center; padding: 10px 0 24px; background: rgba(255,255,255,0.92); border-top: 0.5px solid rgba(0,0,0,0.1); flex-shrink: 0;">
+      <div style="width: 24px; height: 24px; cursor: pointer;" onclick="openIgHome()">
+        <img src="ig_home.png" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <div style="width: 24px; height: 24px; cursor: pointer;">
+        <img src="ig_explore.png" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <div style="width: 24px; height: 24px; cursor: pointer;">
+        <img src="ig_post.png" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <div style="width: 24px; height: 24px; cursor: pointer;">
+        <img src="ig_reels.png" style="width: 100%; height: 100%; object-fit: contain;">
+      </div>
+      <div style="width: 24px; height: 24px; border-radius: 50%; overflow: hidden; cursor: pointer;" onclick="openIgProfile('sion')">
+        <img src="sion-ig7.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- แถบ Home Indicator ปิดแอป (คงไว้แค่อันนี้อันเดียวที่ด้านล่างสุด) -->
+    <div class="home-indicator-container" onclick="showScreen('home-screen')">
+      <div class="home-indicator" style="background: rgba(0,0,0,0.3);"></div>
+    </div>
+  </div>
+
+  <!-- PHOTO FULLSCREEN VIEWER -->
+  <div id="photo-viewer" class="photo-viewer">
+    <div class="ios-viewer-header">
+      <button class="ios-icon-btn" onclick="closePhotoViewer()">‹</button>
+      <div class="ios-header-date-badge">
+        <span class="ios-header-date-title" id="viewer-header-date">Today</span>
+        <span class="ios-header-date-sub" id="viewer-header-time">20:06 👤</span>
+      </div>
+      <button class="ios-icon-btn">•••</button>
+    </div>
+
+    <div class="viewer-body">
+      <img id="viewer-img" class="viewer-img" src="" alt="Full view">
+    </div>
+
+    <div class="ios-filmstrip-container" id="filmstrip-container"></div>
+
+    <div class="ios-viewer-bottom-bar">
+      <button class="ios-icon-btn">📤</button>
+      <div class="ios-bottom-pill">
+        <button class="ios-pill-action">♡</button>
+        <button class="ios-pill-action">ⓘ</button>
+      </div>
+      <button class="ios-icon-btn">🗑️</button>
+    </div>
+
+    <div class="home-indicator-container" onclick="showScreen('home-screen')">
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="i18n.js"></script>
+<script src="i18n-chat-princess.js"></script>
+<script src="i18n-chat-siyeon.js"></script>
+<script src="i18n-chat-mom.js"></script>
+<script src="i18n-chat-daeyoung.js"></script>
+<script src="i18n-chat-yushi.js"></script>
+
+</body>
+</html>
