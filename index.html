@@ -2954,7 +2954,6 @@ const SOUND_VOL = { tap: .6, unlock: .8, wrong: .8, lock: .8, click: .6, calling
   };
 })();
 </script>
-
 <script>
   const PASSCODE = "1118";
   let currentPasscode = "";
@@ -3048,6 +3047,26 @@ const SOUND_VOL = { tap: .6, unlock: .8, wrong: .8, lock: .8, click: .6, calling
         { type: 'outgoing', text: 'i just think we are' },
         { type: 'outgoing', text: 'mint to be' },
         { type: 'incoming', text: '😑' }
+      ]
+    },
+    'riku_old': {
+      name: 'ryo (old)',
+      avatar: 'https://sions-phone.pages.dev/im-person.png',
+      isDefaultAvatar: true,
+      preview: 'lmk',
+      time: '2 years ago',
+      unread: false,
+      messages: [
+        // --- วันที่ 2 กุมภาพันธ์ 2023 ---
+        { type: 'chat-time-divider', text: 'iMessage • January 27, 2023' },
+        { type: 'sent', text: 'filling space' },
+        { type: 'received', text: 'filling space' },
+        { type: 'chat-time-divider', text: 'January 27, 2023 21:21 PM' },
+        { type: 'received', text: 'filling space' },
+
+        // --- วันที่ 5 กุมภาพันธ์ 2023 ---
+        { type: 'chat-time-divider', text: 'iMessage • December 1, 2023' },
+        { type: 'received', text: 'filling space' }
       ]
     }
   };
@@ -3354,8 +3373,8 @@ function openIgProfile(username) {
       btn.innerHTML = `${k.n}${k.l ? `<small>${k.l}</small>` : ''}`;
       btn.onclick = () => {
         if (currentPasscode.length >= 4) return;
-        snd('tap');
         currentPasscode += k.n;
+        snd('tap');
         updateDots();
         if (currentPasscode.length === 4) setTimeout(verifyPasscode, 150);
       };
@@ -3688,6 +3707,20 @@ function openIgProfile(username) {
     <div class="chat-preview">tell them to drive faster😑</div>
   </div>
   ${appBadges.messages > 0 ? '<div class="unread-badge-dot" id="msg-dot-riku"></div>' : ''}
+</div>
+
+<!-- แชท 2: ryo (old) - ใช้คลาส chat-avatar ทำให้ขนาดเท่ากันเป๊ะ -->
+<div class="chat-item" onclick="openChatDetail('riku_old')">
+  <div class="chat-avatar" style="background: linear-gradient(135deg, #aeaec4 0%, #8e8e93 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; padding: 0;">
+    <img src="https://sions-phone.pages.dev/im-person.png" style="width: 55%; height: 55%; object-fit: contain; filter: brightness(0) invert(1);">
+  </div>
+  <div class="chat-info">
+    <div class="chat-top">
+      <span class="chat-name">ryo (old)</span>
+      <span class="chat-time">2 years ago</span>
+    </div>
+    <div class="chat-preview">lmk</div>
+  </div>
 </div>
 </div>`;
     } else if (id === 'kakaotalk') {
@@ -4483,7 +4516,7 @@ function createKakaoBubbleHtml(msg) {
         '<div class="ios-scroll">' +
           '<div class="ios-title">Messages</div>' +
           '<div class="sf">' + IC.search + '<span>Search</span></div>' +
-          '<div>' + row('riku_new', chatDataMessages.riku_new, unread) + '</div>' +
+          '<div>' + row('riku_new', chatDataMessages.riku_new, unread) + row('riku_old', chatDataMessages.riku_old, false) + '</div>' +
         '</div>' +
       '</div>');
   }
@@ -5700,9 +5733,9 @@ function xQuote(n) {
   let phCallT = [], phCallTick = null;
 
   function phStopCall() {
-    sndStop('calling');
     phCallT.forEach(clearTimeout); phCallT = [];
     clearInterval(phCallTick); phCallTick = null;
+    sndStop('calling');
   }
 
     /* ---- ligação RECEBIDA (o contato liga para você) ----
@@ -5735,8 +5768,8 @@ function xQuote(n) {
     incoming = incoming === true;                 // chamadas feitas por você chegam aqui sem argumento
     phStopCall();
     phDismissBanner();
-    if (!incoming) snd('calling');                // toque de "chamando…"
     ph.busy = true; ph.ended = false; ph.incoming = incoming;
+    if (!incoming) snd('calling');
     $('#app-screen').classList.add('dark');
     const btn = (icon, label, tog) =>
       '<div class="pc-b"' + (tog ? ' onclick="this.classList.toggle(\'on\')"' : '') + '><i>' + icon + '</i>' + label + '</div>';
@@ -5765,7 +5798,7 @@ function xQuote(n) {
     };
     const connect = () => {                       // "(Call connected)" + cronômetro
       const d = document.createElement('div');
-      sndStop('calling'); snd('connected');       // som de chamada atendida
+      sndStop('calling'); snd('connected');
       d.className = 'pc-sys'; d.textContent = '(Call connected)';
       addLine(d);
       let s = 0;
@@ -5799,8 +5832,8 @@ function xQuote(n) {
   window.phEndCall = function () {
     if (ph.ended) return;
     ph.ended = true; ph.busy = false;
-    phStopCall();
     snd('hangup');
+    phStopCall();
     const st = $('#pc-st'); if (!st) return;
     st.textContent = 'Call Ended';
     ph.log.unshift({ name: phContact.name, sub: 'mobile', type: ph.incoming ? 'in' : 'out', when: new Date() });
@@ -5814,8 +5847,8 @@ function xQuote(n) {
   /* banner de chamada recebida (topo do celular) */
   let phBanner = null, phBannerT = null, phIncomingDone = false;
   function phDismissBanner() {
-    sndStop('ring');
     clearTimeout(phBannerT);
+    sndStop('ring');
     const el = phBanner; phBanner = null;
     if (!el) return;
     el.classList.add('out');
@@ -5837,8 +5870,8 @@ function xQuote(n) {
       '<button class="pcb-b dec" onclick="phDeclineIncoming()">' + phIc.hang + '</button>' +
       '<button class="pcb-b acc" onclick="phAcceptIncoming()">' + phIc.hang + '</button>';
     document.querySelector('.phone').appendChild(el);
-    snd('ring');                                  // toque da chamada recebida (em loop)
     phBanner = el;
+    snd('ring');
     phBannerT = setTimeout(phMissed, phIncomingRing);
   }
   window.phAcceptIncoming = function () {
@@ -5976,6 +6009,7 @@ function xQuote(n) {
 </script>
 <script src="i18n.js"></script>
 <script src="i18n-chat-princess.js"></script>
+<script src="i18n-chat-riku-old.js"></script>
 <script src="i18n-chat-siyeon.js"></script>
 <script src="i18n-chat-mom.js"></script>
 <script src="i18n-chat-daeyoung.js"></script>
