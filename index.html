@@ -3049,26 +3049,6 @@ const SOUND_VOL = { tap: .6, unlock: .8, wrong: .8, lock: .8, click: .6, calling
         { type: 'incoming', text: '😑' }
       ]
     },
-    'riku_old': {
-      name: 'ryo (old)',
-      avatar: 'https://sions-phone.pages.dev/im-person.png',
-      isDefaultAvatar: true,
-      preview: 'lmk',
-      time: '2 years ago',
-      unread: false,
-      messages: [
-        // --- วันที่ 2 กุมภาพันธ์ 2023 ---
-        { type: 'chat-time-divider', text: 'iMessage • January 27, 2023' },
-        { type: 'sent', text: 'filling space' },
-        { type: 'received', text: 'filling space' },
-        { type: 'chat-time-divider', text: 'January 27, 2023 21:21 PM' },
-        { type: 'received', text: 'filling space' },
-
-        // --- วันที่ 5 กุมภาพันธ์ 2023 ---
-        { type: 'chat-time-divider', text: 'iMessage • December 1, 2023' },
-        { type: 'received', text: 'filling space' }
-      ]
-    }
   };
 
   const chatDataKakao = {
@@ -4516,7 +4496,7 @@ function createKakaoBubbleHtml(msg) {
         '<div class="ios-scroll">' +
           '<div class="ios-title">Messages</div>' +
           '<div class="sf">' + IC.search + '<span>Search</span></div>' +
-          '<div>' + row('riku_new', chatDataMessages.riku_new, unread) + row('riku_old', chatDataMessages.riku_old, false) + '</div>' +
+          '<div>' + row('riku_new', chatDataMessages.riku_new, unread) '<div>' + row('riku_new', chatDataMessages.riku_new, unread) + '</div>' +
         '</div>' +
       '</div>');
   }
