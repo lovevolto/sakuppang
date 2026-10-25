@@ -210,50 +210,50 @@ const igProfiles = {
   sion: {
     username: 'ppang',
     name: '藤永咲哉', // <--- ชื่อที่จะให้แสดงตัวหนาๆ บรรทัดแรก
-    avatar: '../img/ryo-1.jpg',
+    avatar: 'img/ryo-1.jpg',
     postsCount: 6,
     followers: '511k',
     following: '128',
     bio: '@yul',
     posts: [
-      { img: '../img/sig-1.jpg', caption: '🤍' },
-      { img: '../img/sig-2.jpg', caption: '' },
-      { img: '../img/sig-3.jpg', caption: '' },
-      { img: '../img/sig-4.jpg', caption: 'taken by daeyoung "sensei"' },
-      { img: '../img/sig-5.jpg', caption: 'hbd my beibe' },
-      { img: '../img/sig-6.jpg', caption: '' },
-      { img: '../img/sig-7.jpg', caption: 'these cats smh' },
-      { img: '../img/sig-8.jpg', caption: 'bestest kitten ever \'cause she bit yushi' },
-      { img: '../img/sig-9.jpg', caption: '@0hsion' }
+      { img: 'img/sig-1.jpg', caption: '🤍' },
+      { img: 'img/sig-2.jpg', caption: '' },
+      { img: 'img/sig-3.jpg', caption: '' },
+      { img: 'img/sig-4.jpg', caption: 'taken by daeyoung "sensei"' },
+      { img: 'img/sig-5.jpg', caption: 'hbd my beibe' },
+      { img: 'img/sig-6.jpg', caption: '' },
+      { img: 'img/sig-7.jpg', caption: 'these cats smh' },
+      { img: 'img/sig-8.jpg', caption: 'bestest kitten ever \'cause she bit yushi' },
+      { img: 'img/sig-9.jpg', caption: '@0hsion' }
     ]
   },
   riku: {
     username: 'yul',
     name: '廣瀬 遼',
-    avatar: '../img/ryo-6.jpg',
+    avatar: 'img/ryo-6.jpg',
     postsCount: 5,
     followers: '628',
     following: '51',
     bio: '@ppang',
     posts: [
-      { img: '../img/rig-1.jpg', caption: '🌅' },
-      { img: '../img/rig-2.jpg', caption: '' },
-      { img: '../img/rig-3.jpg', caption: '#streaming' },
-      { img: '../img/rig-4.jpg', caption: 'new angle i found cool' },
-      { img: '../img/rig-5.jpg', caption: '' },
-      { img: '../img/rig-6.jpg', caption: '💚' },
-      { img: '../img/rig-7.jpg', caption: 'neo go my back' },
-      { img: '../img/rig-8.jpg', caption: 'tbt from when saku-chan confessed hehe wasn\'t he so shy-looking then? neomu kawaii' },
-      { img: '../img/rig-9.jpg', caption: '😴' }
+      { img: 'img/rig-1.jpg', caption: '🌅' },
+      { img: 'img/rig-2.jpg', caption: '' },
+      { img: 'img/rig-3.jpg', caption: '#streaming' },
+      { img: 'img/rig-4.jpg', caption: 'new angle i found cool' },
+      { img: 'img/rig-5.jpg', caption: '' },
+      { img: 'img/rig-6.jpg', caption: '💚' },
+      { img: 'img/rig-7.jpg', caption: 'neo go my back' },
+      { img: 'img/rig-8.jpg', caption: 'tbt from when saku-chan confessed hehe wasn\'t he so shy-looking then? neomu kawaii' },
+      { img: 'img/rig-9.jpg', caption: '😴' }
      
     ]
   }
 };
 
 const igFeedPosts = [
-    { username: 'yul', avatar: '../img/ryo-6.jpg', img: '../img/rig-1.jpg', caption: '🌅', likes: '305' },
-    { username: 'yul', avatar: '../img/ryo-6.jpg', img: '../img/rig-2.jpg', caption: '', likes: '511' },
-    { username: 'yul', avatar: '../img/ryo-6.jpg', img: '../img/rig-3.jpg', caption: '#streaming', likes: '349' }
+    { username: 'yul', avatar: 'img/ryo-6.jpg', img: 'img/rig-1.jpg', caption: '🌅', likes: '305' },
+    { username: 'yul', avatar: 'img/ryo-6.jpg', img: 'img/rig-2.jpg', caption: '', likes: '511' },
+    { username: 'yul', avatar: 'img/ryo-6.jpg', img: 'img/rig-3.jpg', caption: '#streaming', likes: '349' }
   ];
 
 
@@ -541,11 +541,11 @@ function openIgProfile(username) {
       { id: 'kakaotalk', name: 'KakaoTalk', icon: 'https://sions-phone.pages.dev/KakaoTalk_logo.svg', badgeKey: 'kakaotalk' },
       { id: 'photos', name: 'Photos', icon: 'https://sions-phone.pages.dev/icon-photos.png' },
       { id: 'clock', name: 'Clock', icon: 'https://sions-phone.pages.dev/icon-clock.png' },
-      { id: 'youtube', name: 'YouTube', icon: '../img/yt-icon.webp' },
-      { id: 'bereal', name: 'BeReal.', icon: '../img/bereal-icon.png' },
+      { id: 'youtube', name: 'YouTube', icon: 'img/yt-icon.webp' },
+      { id: 'bereal', name: 'BeReal.', icon: 'img/bereal-icon.png' },
       { id: 'notes', name: 'Notes', icon: 'https://sions-phone.pages.dev/icon-notes.png' },
       { id: 'x', name: 'X', icon: 'img/x-icon.avif' },
-      { id: 'postype', name: 'POSTYPE', icon: '../img/pt-icon.png' },
+      { id: 'postype', name: 'POSTYPE', icon: 'img/pt-icon.png' },
       { id: 'camera', name: 'Camera', icon: 'https://sions-phone.pages.dev/icon-camera.png' },
       { id: 'brawl-stars', name: 'Brawl Stars', icon: 'img/bs-icon.jpg' },
       { id: 'instagram', name: 'Instagram', icon: 'https://sions-phone.pages.dev/icon-ig.png' }
@@ -1877,8 +1877,8 @@ function renderYouTube() {
       avatarColor: '#5474a8',
       thumb: 'one',
       art: '2016',
-      thumbImg: '../img/thumb-1.jpg',
-      avatarImg: '../img/thumb-1-i.jpg'
+      thumbImg: 'img/thumb-1.jpg',
+      avatarImg: 'img/thumb-1-i.jpg'
     },
     {
       title: '【LTKLOL】本番もやんねん【CCC day3 】',
@@ -1889,8 +1889,8 @@ function renderYouTube() {
       avatarColor: '#e36b52',
       thumb: 'two',
       art: '☀',
-      thumbImg: '../img/thumb-2.jpg',
-      avatarImg: '../img/thumb-2-i.jpg'
+      thumbImg: 'img/thumb-2.jpg',
+      avatarImg: 'img/thumb-2-i.jpg'
     },
     {
       title: 'Kamen Rider Wizard shower Careless Whisper',
@@ -1901,8 +1901,8 @@ function renderYouTube() {
       avatarColor: '#438577',
       thumb: 'three',
       art: 'slow',
-      thumbImg: '../img/thumb-3.jpg',
-      avatarImg: '../img/thumb-3-i.jpg'
+      thumbImg: 'img/thumb-3.jpg',
+      avatarImg: 'img/thumb-3-i.jpg'
     },
     {
       title: 'NCT 127 엔시티 127 \'Blingy\' MV',
@@ -1913,8 +1913,8 @@ function renderYouTube() {
       avatarColor: '#438577',
       thumb: 'three',
       art: 'slow',
-      thumbImg: '../img/thumb-4.jpg',
-      avatarImg: '../img/thumb-4-i.jpg'
+      thumbImg: 'img/thumb-4.jpg',
+      avatarImg: 'img/thumb-4-i.jpg'
     }
   ];
 
@@ -2064,22 +2064,22 @@ window.ytNavigate = function (item, section) {
     joined: 'Joined April 2023',
     following: '54',
     followers: '21',
-    avatarImg: '../img/sakuya-11.jpg',   // ex.: 'img/x-me.jpg'
-    bannerImg: '../img/sakuya-header.jpg',   // ex.: 'img/x-banner.jpg'
+    avatarImg: 'img/sakuya-11.jpg',   // ex.: 'img/x-me.jpg'
+    bannerImg: 'img/sakuya-header.jpg',   // ex.: 'img/x-banner.jpg'
     avatarColor: '#5b6cff'
   };
 
   /* contas da timeline (nome, @, foto) — avatarImg é opcional */
   const xU = {
-    dae:   { name: 'dede',      handle: 'daeyoungie',    verified: false, color: '#e0607e', avatarImg: '../img/dy-pfp.jpg' },
-    ryo:   { name: 'ryo',      handle: 'dodoily',       verified: false, color: '#2d7ff9', avatarImg: '../img/ry-pfp.jpg' },
-    rei:   { name: '🐹',      handle: 'reinyourheart', verified: false, color: '#f0883e', avatarImg: '../img/nr-pfp.jpg' },
-    sion:  { name: 'sion',     handle: 'tyotyo',        verified: false, color: '#9b59b6', avatarImg: '../img/os-pfp.jpg' },
-    yuu:   { name: 'yuuchan',  handle: 'yutmongi',      verified: false, color: '#34495e', avatarImg: '../img/ys-pfp.jpg' },
-    yujin: { name: 'yujin',    handle: 'yuj07',         verified: false, color: '#16a085', avatarImg: '../img/yj-pfp.jpg' },
-    woon:  { name: 'nagi',  handle: 'wo_on',         verified: false, color: '#c0392b', avatarImg: '../img/wk-pfp.jpg' },
-    riku:  { name: 'riku',     handle: 'mariku',        verified: false, color: '#8e44ad', avatarImg: '../img/rk-pfp.jpg' },
-    saku:  { name: '🥐',     handle: 'sakuppang',        verified: false, color: '#8e44ad', avatarImg: '../img/sakuya-11.jpg' }
+    dae:   { name: 'dede',      handle: 'daeyoungie',    verified: false, color: '#e0607e', avatarImg: 'img/dy-pfp.jpg' },
+    ryo:   { name: 'ryo',      handle: 'dodoily',       verified: false, color: '#2d7ff9', avatarImg: 'img/ry-pfp.jpg' },
+    rei:   { name: '🐹',      handle: 'reinyourheart', verified: false, color: '#f0883e', avatarImg: 'img/nr-pfp.jpg' },
+    sion:  { name: 'sion',     handle: 'tyotyo',        verified: false, color: '#9b59b6', avatarImg: 'img/os-pfp.jpg' },
+    yuu:   { name: 'yuuchan',  handle: 'yutmongi',      verified: false, color: '#34495e', avatarImg: 'img/ys-pfp.jpg' },
+    yujin: { name: 'yujin',    handle: 'yuj07',         verified: false, color: '#16a085', avatarImg: 'img/yj-pfp.jpg' },
+    woon:  { name: 'nagi',  handle: 'wo_on',         verified: false, color: '#c0392b', avatarImg: 'img/wk-pfp.jpg' },
+    riku:  { name: 'riku',     handle: 'mariku',        verified: false, color: '#8e44ad', avatarImg: 'img/rk-pfp.jpg' },
+    saku:  { name: '🥐',     handle: 'sakuppang',        verified: false, color: '#8e44ad', avatarImg: 'img/sakuya-11.jpg' }
   };
 
   /* Todos os tweets, numerados (t1…t20) como na sua lista.
@@ -2103,11 +2103,11 @@ window.ytNavigate = function (item, section) {
           reply: '', rt: '', like: '', views: '2' },
     5:  { u: 'sion',   time: '38m',
           text: 'help yourselves',
-          video: { poster: '', src: '../img/sion-3.mp4', duration: '0:10' },     // src: 'video/minecraft.mp4' para ser tocável
+          video: { poster: '', src: 'img/sion-3.mp4', duration: '0:10' },     // src: 'video/minecraft.mp4' para ser tocável
           reply: '8', rt: '6', like: '14', views: '87' },
 
     6:  { u: 'riku', time: '4h', text: '',
-          media: 'linear-gradient(135deg,#182848,#4b6cb7)', mediaLabel: '', mediaImg: '../img/riku-2.jpg',
+          media: 'linear-gradient(135deg,#182848,#4b6cb7)', mediaLabel: '', mediaImg: 'img/riku-2.jpg',
           reply: '', rt: '', like: '2', views: '5' },
     7:  { u: 'yuu',  time: '4h', text: 'getting my hair sampled for realistic cat ears clip-ons since riku promised me sushi after😋',
           reply: '', rt: '', like: '1', views: '3' },
@@ -2115,7 +2115,7 @@ window.ytNavigate = function (item, section) {
     /* 8 cita 10 (foto) · 9 responde ao 8 · 10 só aparece dentro do 8 */
     8:  { u: 'saku',   time: '8h', quote: 10, thread: 'top',
       text: '',
-      media: 'linear-gradient(135deg,#182848,#4b6cb7)', mediaLabel: '', mediaImg: '../img/sakuya-1.jpg',
+      media: 'linear-gradient(135deg,#182848,#4b6cb7)', mediaLabel: '', mediaImg: 'img/sakuya-1.jpg',
       reply: '2', rt: '', like: '12', views: '67' },
     9:  { u: 'riku',  time: '7h', thread: 'bot', text: '(￣▽￣;)',
       reply: '', rt: '', like: '1', views: '2' },
@@ -2130,7 +2130,7 @@ window.ytNavigate = function (item, section) {
           reply: '3', rt: '', like: '', views: '16' },
 
     14: { u: 'yuu',   time: '14h', text: '🙃',
-          media: 'linear-gradient(135deg,#ff9966,#ff5e62)', mediaLabel: '☀', mediaImg: '../img/yushi-2.jpg',
+          media: 'linear-gradient(135deg,#ff9966,#ff5e62)', mediaLabel: '☀', mediaImg: 'img/yushi-2.jpg',
           reply: '8', rt: '', like: '32', views: '233' },
 
     /* 16 → 17 (resposta) → 18 (resposta à resposta) */
@@ -2143,8 +2143,8 @@ window.ytNavigate = function (item, section) {
 
     18: { u: 'rei',  time: '1d', text: 'after such wonderful days hanging out in korea with wonhie last week i\'m now back in nagoya✈️°・*:.。.♡',
           images: [
-            { src: '../img/rei-4.png', bg: 'linear-gradient(135deg,#134e5e,#71b280)', label: '🍜' },
-            { src: '../img/rei-5.jpg', bg: 'linear-gradient(135deg,#ff9966,#ff5e62)', label: '🥢' }   // 2ª foto: coloque o caminho em src
+            { src: 'img/rei-4.png', bg: 'linear-gradient(135deg,#134e5e,#71b280)', label: '🍜' },
+            { src: 'img/rei-5.jpg', bg: 'linear-gradient(135deg,#ff9966,#ff5e62)', label: '🥢' }   // 2ª foto: coloque o caminho em src
           ],
           reply: '5', rt: '', like: '8', views: '96' },
 
@@ -2156,7 +2156,7 @@ window.ytNavigate = function (item, section) {
 
   const xMyTweets = [
     { time: '8h', text: '',
-    mediaImg: '../img/sakuya-1.jpg',
+    mediaImg: 'img/sakuya-1.jpg',
     media: 'linear-gradient(135deg,#182848,#4b6cb7)', mediaLabel: '🐈',
     quote: { u: 'ryo', time: '3d',
              text: 'that hamster doing a peace sign sticker on kkt reminds me so much of @mariku' },
@@ -2186,11 +2186,11 @@ window.ytNavigate = function (item, section) {
   ];
 
   const xDMs = [
-    { name: 'ryo', handle: 'dodoily', time: '2m', color: '#e0607e', avatarImg: '../img/ry-pfp.jpg', unread: false, text: 'You: this is so us' },
-    { name: 'yujin', handle: 'yuj07', time: '18m', color: '#f0883e', avatarImg: '../img/yj-pfp.jpg', unread: false, text: 'no way' },
-    { name: 'harua', handle: 'rururung', time: '1h', color: '#9b59b6', avatarImg: '../img/hr-pfp.jpg', unread: false, text: 'whenever you\'re free' },
-    { name: '07', handle: '', time: '3h', color: '#16a085', avatarImg: '../img/ls-pfp.jpg', unread: true, text: 'yujin: wym you got f it\'s pe man' },
-    { name: 'woni', handle: 'potato', time: '5h', color: '#c0392b', avatarImg: '../img/wh-pfp.jpg', unread: false, text: 'You: that\'s gay but who am i to judge you' },
+    { name: 'ryo', handle: 'dodoily', time: '2m', color: '#e0607e', avatarImg: 'img/ry-pfp.jpg', unread: false, text: 'You: this is so us' },
+    { name: 'yujin', handle: 'yuj07', time: '18m', color: '#f0883e', avatarImg: 'img/yj-pfp.jpg', unread: false, text: 'no way' },
+    { name: 'harua', handle: 'rururung', time: '1h', color: '#9b59b6', avatarImg: 'img/hr-pfp.jpg', unread: false, text: 'whenever you\'re free' },
+    { name: '07', handle: '', time: '3h', color: '#16a085', avatarImg: 'img/ls-pfp.jpg', unread: true, text: 'yujin: wym you got f it\'s pe man' },
+    { name: 'woni', handle: 'potato', time: '5h', color: '#c0392b', avatarImg: 'img/wh-pfp.jpg', unread: false, text: 'You: that\'s gay but who am i to judge you' },
   ];
 
   const xIc = {
@@ -2576,10 +2576,10 @@ function xQuote(n) {
     '<stop offset="0" stop-color="' + c1 + '"/><stop offset="1" stop-color="' + c2 + '"/></linearGradient></defs>' +
     '<rect width="200" height="200" fill="url(#g)"/><text x="100" y="124" font-size="76" text-anchor="middle" fill="rgba(255,255,255,.92)" font-family="Helvetica,Arial,sans-serif" font-weight="700">' + label + '</text></svg>');
   const igOthers = [
-    { username: 'yuj_07',  avatar: '../img/yujin-1.jpg', img: '../img/yujin-2.jpg', c: ['#ff9a9e', '#fad0c4'], emoji: '🌸', caption: '', likes: '1,204', close: true },
-    { username: 'naoi',  avatar: '../img/rei-1.jpg', img: '../img/rei-2.jpg', c: ['#a18cd1', '#fbc2eb'], emoji: '🎞', caption: 'gmmmmm~💖🫶(*˘ ³˘)♬.*ﾟ',            likes: '3,870' },
-    { username: 'won_hee',   avatar: '../img/wonhee-1.jpg', img: '../img/wonhee-2.jpg', c: ['#f6d365', '#fda085'], emoji: '☕', caption: '19yo who counts sheeps',  likes: '926' },
-    { username: '0hsion', avatar: '../img/sion-1.jpg', img: '../img/sion-2.jpg', c: ['#84fab0', '#8fd3f4'], emoji: '🎧', caption: 'gg (\'tho kia lost😢)',    likes: '2,415' }
+    { username: 'yuj_07',  avatar: 'img/yujin-1.jpg', img: 'img/yujin-2.jpg', c: ['#ff9a9e', '#fad0c4'], emoji: '🌸', caption: '', likes: '1,204', close: true },
+    { username: 'naoi',  avatar: 'img/rei-1.jpg', img: 'img/rei-2.jpg', c: ['#a18cd1', '#fbc2eb'], emoji: '🎞', caption: 'gmmmmm~💖🫶(*˘ ³˘)♬.*ﾟ',            likes: '3,870' },
+    { username: 'won_hee',   avatar: 'img/wonhee-1.jpg', img: 'img/wonhee-2.jpg', c: ['#f6d365', '#fda085'], emoji: '☕', caption: '19yo who counts sheeps',  likes: '926' },
+    { username: '0hsion', avatar: 'img/sion-1.jpg', img: 'img/sion-2.jpg', c: ['#84fab0', '#8fd3f4'], emoji: '🎧', caption: 'gg (\'tho kia lost😢)',    likes: '2,415' }
   ];
   igOthers.forEach(o => {
     o.avatar = o.avatar || igPh(o.c[0], o.c[1], o.username.charAt(0).toUpperCase());
@@ -2603,8 +2603,8 @@ function xQuote(n) {
     const ring = (src, cls) => '<div class="ig-ring ' + (cls || '') + '"><div><img src="' + E(src) + '" alt=""></div></div>';
     const stories =
       '<div class="ig-stories">' +
-  '<div class="ig-story">' + ring('../img/ryo-1.jpg') + '<span>Your Story</span></div>' +
-  '<div class="ig-story">' + ring('../img/ryo-6.jpg', 'cf') + '<span>yul</span></div>' +
+  '<div class="ig-story">' + ring('img/ryo-1.jpg') + '<span>Your Story</span></div>' +
+  '<div class="ig-story">' + ring('img/ryo-6.jpg', 'cf') + '<span>yul</span></div>' +
   igOthers.map(o => '<div class="ig-story">' + ring(o.avatar, o.close ? 'cf' : '') + '<span>' + E(o.username) + '</span></div>').join('') +
 '</div>';;
     const own = igFeedPosts.map((p, i) =>
@@ -2987,7 +2987,7 @@ function xQuote(n) {
   const brMe = {
     name: '🥐',
     username: '',
-    avatar: '../img/br-pfp.jpg',                         // ex.: 'img/bereal-me.jpg'
+    avatar: 'img/br-pfp.jpg',                         // ex.: 'img/bereal-me.jpg'
     link: 'BeRe.al/ppang'
   };
   /* 14 dias, do mais antigo ao de hoje (as datas são calculadas sozinhas).
@@ -2998,10 +2998,10 @@ function xQuote(n) {
        today: o dia de hoje (número em círculo branco) */
   const brDays = [
   { muted: true }, { muted: true }, { muted: true }, { muted: true },
-  { img: '../img/br-1.jpg', img2: '../img/br-1.jpg' },                    { img: '../img/br-2.jpg', img2: '../img/br-2.jpg', ring: true },  { img: '../img/br-3.jpg', img2: '../img/br-3.jpg', ring: true },
-  { img: '../img/br-4.jpg', img2: '../img/br-4.jpg' },         {},              { img: '../img/br-5.jpg', img2: '../img/br-5.jpg' },
-  { img: '../img/br-6.jpg', img2: '../img/br-6.jpg', ring: true },       { img: '../img/br-7.jpg', img2: '../img/br-7.jpg', ring: true },  { img: '../img/br-8.jpg', img2: '../img/br-8.jpg' },
-  { img: '../img/br-9.jpg', img2: '../img/br-9.jpg', ring: true, today: true }
+  { img: 'img/br-1.jpg', img2: 'img/br-1.jpg' },                    { img: 'img/br-2.jpg', img2: 'img/br-2.jpg', ring: true },  { img: 'img/br-3.jpg', img2: 'img/br-3.jpg', ring: true },
+  { img: 'img/br-4.jpg', img2: 'img/br-4.jpg' },         {},              { img: 'img/br-5.jpg', img2: 'img/br-5.jpg' },
+  { img: 'img/br-6.jpg', img2: 'img/br-6.jpg', ring: true },       { img: 'img/br-7.jpg', img2: 'img/br-7.jpg', ring: true },  { img: 'img/br-8.jpg', img2: 'img/br-8.jpg' },
+  { img: 'img/br-9.jpg', img2: 'img/br-9.jpg', ring: true, today: true }
 ];
   const brFill = ['#8d7b6a,#3a2f2a', '#c9a77a,#5a4630', '#9a8f86,#2c2926', '#a8896b,#3f2e22', '#6f7a86,#1f2328',
                   '#b79a82,#4a3a2e', '#2b2b30,#0c0c0e', '#8a8f94,#34383c', '#b08d57,#4b3a1e', '#b9a690,#3d332b'];
